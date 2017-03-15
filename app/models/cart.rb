@@ -12,14 +12,12 @@ class Cart < ActiveRecord::Base
   end
 
   def add_item(item_id)
-    line_items.find_by(item_id: item_id) || line_items.build(item_id: item_id)
-    # li = line_items.find_by(item_id: item_id)
-    # if li
-    #   li.quantity += 1
-    # else
-    #   li = line_items.build(item_id: item_id)
-    # end
-    # li
+    if li = line_items.find_by(item_id: item_id)
+      li.quantity += 1
+    else
+      li = line_items.build(item_id: item_id)
+    end
+    li
   end
 
   def checkout_cart
