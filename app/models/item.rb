@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  include Readable::InstanceMethods
+
   has_many :line_items
   belongs_to :category
 
