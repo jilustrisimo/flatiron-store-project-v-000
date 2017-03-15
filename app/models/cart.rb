@@ -13,7 +13,6 @@ class Cart < ActiveRecord::Base
 
   def add_item(item_id)
     line_items.find_by(item_id: item_id) || line_items.build(item_id: item_id)
-    # binding.pry
     # li = line_items.find_by(item_id: item_id)
     # if li
     #   li.quantity += 1
