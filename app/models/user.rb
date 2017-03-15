@@ -9,6 +9,6 @@ class User < ActiveRecord::Base
 
   def checkout_current_cart
     self.current_cart = nil
-    self.save
+    save
   end
 end
